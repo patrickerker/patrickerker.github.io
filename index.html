@@ -1,1 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrick Erker - BCG Partner & Associate Director</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        nav .logo {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #0066cc;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+            line-height: 1.2;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: #0066cc;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 35px;
+            background: #0066cc;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid #0066cc;
+        }
+
+        .cta-button:hover {
+            background: #0052a3;
+            border-color: #0052a3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,102,204,0.3);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 100px 0;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #1a1a1a;
+            font-weight: 700;
+        }
+
+        section p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        /* About Section */
+        .about {
+            background: #f8f9fa;
+        }
+
+        /* Expertise Section */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .expertise-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+
+        .expertise-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #0066cc;
+        }
+
+        .expertise-card p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Impact Section */
+        .impact {
+            background: #f8f9fa;
+        }
+
+        .impact-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .impact-item {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .impact-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #0066cc;
+        }
+
+        .impact-item p {
+            font-size: 1rem;
+            color: #666;
+            margin: 0;
+        }
+
+        .values-statement {
+            margin-top: 40px;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #555;
+            padding: 30px;
+            background: white;
+            border-left: 4px solid #0066cc;
+            border-radius: 5px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #f8f9fa;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 40px auto 0;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #0066cc;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 15px;
+            background: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background: #0052a3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,102,204,0.3);
+        }
+
+        .linkedin-link {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .linkedin-link a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .linkedin-link a:hover {
+            color: #0052a3;
+            text-decoration: underline;
+        }
+
+        .form-message {
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .form-message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .form-message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="#home" class="logo">Patrick Erker</a>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Patrick Erker</h1>
+                <div class="subtitle">Partner & Associate Director at Boston Consulting Group</div>
+                <p>Leading learning and upskilling at the intersection of people and technology.</p>
+                <a href="#contact" class="cta-button">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I'm a founding leader of BCG U, Boston Consulting Group's learning and upskilling business, where I work at the intersection of workforce transformation and emerging technology. My focus is on helping organizations build skills and create value in an AI-driven economy, always with an emphasis on human dignity, purpose, and long-term impact.</p>
+            <p>Over 15 years and two stints at BCG, I've advised hundreds of client accounts on learning strategy, upskilling, workforce transformation, and related challenges. I also serve as a global co-lead of BCG U's core consulting skills offering, partnering with strategy teams, senior leaders, and organizations to develop problem-solving, communication, and stakeholder management capabilities.</p>
+            <p>My perspective has been shaped by diverse experiences beyond traditional consulting. I've held ed tech leadership roles at Section, Guild Education, and Entangled Group, and earlier in my career worked in corporate finance and investment banking. I began my professional journey as a Teach For America corps member, an experience that continues to inform my commitment to education and human potential.</p>
+            <p>I hold an MBA with distinction, a master's degree in teaching, and a bachelor's degree. I'm based in California.</p>
+        </div>
+    </section>
+
+    <section id="expertise">
+        <div class="container">
+            <h2>Areas of Expertise</h2>
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <h3>Workforce Transformation & Upskilling</h3>
+                    <p>Designing and implementing learning strategies that help organizations build critical capabilities and adapt to the evolving demands of work in the 21st century.</p>
+                </div>
+                <div class="expertise-card">
+                    <h3>AI & Emerging Education Technology</h3>
+                    <p>Helping leaders harness the potential of AI and education technology to drive value while maintaining focus on human dignity, purpose, and meaningful impact.</p>
+                </div>
+                <div class="expertise-card">
+                    <h3>Leadership Development & Coaching</h3>
+                    <p>Building problem-solving, communication, and stakeholder management capabilities with strategy teams, executives, and emerging leaders across organizations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="impact" class="impact">
+        <div class="container">
+            <h2>Impact & Experience</h2>
+            <p>Since rejoining BCG in 2022, I've had the privilege of serving over 100 client organizations and account teams globally, spanning technology, financial services, energy, healthcare, government, and other sectors. My work focuses on helping organizations build the capabilities they need to thrive, with an emphasis on human dignity, purpose, and sustainable impact.</p>
+            
+            <div class="impact-highlights">
+                <div class="impact-item">
+                    <h3>Scale & Reach</h3>
+                    <p>Designed and delivered upskilling programs reaching thousands of leaders and professionals across Fortune 500 companies, global enterprises, and government agencies. Notable examples include a GenAI upskilling program for 180+ executive teams at a leading technology company, and learning diagnostics for organizations with 40,000+ employees.</p>
+                </div>
+                
+                <div class="impact-item">
+                    <h3>Advisory & Delivery</h3>
+                    <p>My work combines strategic advisory with hands-on execution. I advise C-suite executives and learning leaders on learning strategy and organizational design, while also serving as lead facilitator for workshops and capability-building programs. This dual focus ensures recommendations are both strategically sound and practically implementable.</p>
+                </div>
+                
+                <div class="impact-item">
+                    <h3>Diverse Foundation</h3>
+                    <p>Before my current role, I spent three years in ed tech leadership roles at Section, Guild Education, and Entangled Group, two years teaching fifth grade as a Teach For America corps member, two years in corporate finance at Raytheon, and summers in investment banking and on a dude ranch. This breadth of experience informs my approach to building capabilities that honor the whole person and create lasting value.</p>
+                </div>
+            </div>
+            
+            <p class="values-statement">At the heart of my work is a belief that organizations thrive when they invest in their people with intentionality and respect for human dignity. The most effective learning programs don't just build skills—they help people discover and develop their unique potential in service of meaningful outcomes.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Let's Connect</h2>
+            <p>I'm always interested in connecting with fellow professionals, potential collaborators, and organizations looking to drive meaningful change.</p>
+            
+            <form class="contact-form" id="contactForm" action="https://formspree.io/f/maqdwqny" method="POST">
+                <div class="form-message" id="formMessage"></div>
+                
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-button">Send Message</button>
+                
+                <div class="linkedin-link">
+                    Or connect with me on <a href="https://linkedin.com/in/patrickerker" target="_blank">LinkedIn</a>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Patrick Erker. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add shadow to nav on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 2px 15px rgba(0,0,0,0.1)';
+            } else {
+                nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
+            }
+        });
+
+        // Handle form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            const formMessage = document.getElementById('formMessage');
+            const submitButton = this.querySelector('.submit-button');
+            
+            // Disable button during submission
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+            
+            // The form will submit to Formspree automatically
+            // Show a temporary message
+            setTimeout(() => {
+                formMessage.textContent = 'Sending your message...';
+                formMessage.className = 'form-message success';
+                formMessage.style.display = 'block';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
