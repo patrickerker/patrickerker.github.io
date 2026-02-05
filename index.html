@@ -144,6 +144,35 @@
             background: #f8f9fa;
         }
 
+        .about-content {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .about-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .about-image {
+                width: 200px;
+                height: 200px;
+                margin: 0 auto;
+                display: block;
+            }
+        }
+
         /* Expertise Section */
         .expertise-grid {
             display: grid;
@@ -381,10 +410,15 @@
     <section id="about" class="about">
         <div class="container">
             <h2>About Me</h2>
-            <p>I'm a founding leader of BCG U, Boston Consulting Group's learning and upskilling business, where I work at the intersection of workforce transformation and emerging technology. My focus is on helping organizations build skills and create value in an AI-driven economy, always with an emphasis on human dignity, purpose, and long-term impact.</p>
-            <p>Over 15 years and two stints at BCG, I've advised hundreds of client accounts on learning strategy, upskilling, workforce transformation, and related challenges. I also serve as a global co-lead of BCG U's core consulting skills offering, partnering with strategy teams, senior leaders, and organizations to develop problem-solving, communication, and stakeholder management capabilities.</p>
-            <p>My perspective has been shaped by diverse experiences beyond traditional consulting. I've held ed tech leadership roles at Section, Guild Education, and Entangled Group, and earlier in my career worked in corporate finance and investment banking. I began my professional journey as a Teach For America corps member, an experience that continues to inform my commitment to education and human potential.</p>
-            <p>I hold an MBA with distinction, a master's degree in teaching, and a bachelor's degree. I'm based in California.</p>
+            <div class="about-content">
+                <img src="patrick.jpg" alt="Patrick Erker" class="about-image">
+                <div>
+                    <p>I'm a founding leader of BCG U, Boston Consulting Group's learning and upskilling business, where I work at the intersection of workforce transformation and emerging technology. My focus is on helping organizations build skills and create value in an AI-driven economy, always with an emphasis on human dignity, purpose, and long-term impact.</p>
+                    <p>Over 15 years and two stints at BCG, I've advised hundreds of client accounts on learning strategy, upskilling, workforce transformation, and related challenges. I also serve as a global co-lead of BCG U's core consulting skills offering, partnering with strategy teams, senior leaders, and organizations to develop problem-solving, communication, and stakeholder management capabilities.</p>
+                    <p>My perspective has been shaped by diverse experiences beyond traditional consulting. I've held ed tech leadership roles at Section, Guild Education, and Entangled Group, and earlier in my career worked in corporate finance and investment banking. I began my professional journey as a Teach For America corps member, an experience that continues to inform my commitment to education and human potential.</p>
+                    <p>I hold an MBA with distinction, a master's degree in teaching, and a bachelor's degree. I'm based in California.</p>
+                </div>
+            </div>
         </div>
     </section>
 
